@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Drag Translator Settings
+    </title>
+
+    <link
+            rel="stylesheet"
+            href="options.css"
+    >
+</head>
+
+
+<body>
+
+<main class="settings-shell">
+
+    <header class="page-header">
+
+        <div class="app-mark">
+            🌐
+        </div>
+
+        <div>
+            <h1>
+                Drag Translator
+            </h1>
+
+            <p>
+                Translation and dictionary preferences
+            </p>
+        </div>
+
+    </header>
+
+
+    <section class="settings-card">
+
+        <!-- API -->
+
+        <div class="setting-group">
+
+            <div class="setting-heading">
+
+                <div>
+                    <h2>
+                        Gemini API
+                    </h2>
+
+                    <p>
+                        Used for translation and explanations
+                    </p>
+                </div>
+
+            </div>
+
+
+            <label
+                    class="field-label"
+                    for="apiKey"
+            >
+                API key
+            </label>
+
+
+            <div class="input-row">
+
+                <input
+                        id="apiKey"
+                        type="password"
+                        placeholder="Enter your Gemini API key"
+                        autocomplete="off"
+                >
+
+
+                <button
+                        id="toggleApiKey"
+                        type="button"
+                        class="ghost-button"
+                >
+                    Show
+                </button>
+
+
+                <button
+                        id="testApiKey"
+                        type="button"
+                        class="primary-small-button"
+                >
+                    Test
+                </button>
+
+            </div>
+
+
+            <div
+                    id="apiKeyStatus"
+                    class="status-text"
+            >
+                Enter your API key and test it.
+            </div>
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <!-- Model -->
+
+        <div class="setting-group">
+
+            <div class="setting-heading">
+
+                <div>
+                    <h2>
+                        Model
+                    </h2>
+
+                    <p>
+                        Choose which Gemini model to use
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="input-row">
+
+                <select id="geminiModel">
+
+                    <option value="">
+                        Test your API key first
+                    </option>
+
+                </select>
+
+
+                <button
+                        id="refreshModels"
+                        type="button"
+                        class="ghost-button"
+                >
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div
+                    id="modelStatus"
+                    class="status-text"
+            >
+                Compatible models will appear here.
+            </div>
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <!-- Language -->
+
+        <div class="setting-group">
+
+            <div class="setting-heading">
+
+                <div>
+                    <h2>
+                        Default language
+                    </h2>
+
+                    <p>
+                        Used when you open the translation popup
+                    </p>
+                </div>
+
+            </div>
+
+
+            <select id="targetLanguage">
+
+                <option value="German">
+                    🇩🇪 German
+                </option>
+
+                <option value="English">
+                    🇬🇧 English
+                </option>
+
+                <option value="Vietnamese">
+                    🇻🇳 Vietnamese
+                </option>
+
+            </select>
+
+
+            <div class="info-note">
+                English → English automatically switches to dictionary mode.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="settings-footer">
+
+            <span
+                    id="status"
+                    class="save-status"
+            ></span>
+
+
+        <button
+                id="save"
+                type="button"
+                class="save-button"
+        >
+            Save changes
+        </button>
+
+    </footer>
+
+</main>
+
+
+<script src="options.js"></script>
+
+</body>
+
+</html>

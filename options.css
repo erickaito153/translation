@@ -1,0 +1,551 @@
+:root {
+    --bg: #f7f7f8;
+    --surface: #ffffff;
+
+    --text: #1f1f1f;
+    --muted: #717171;
+
+    --border: #e7e7e7;
+    --border-strong: #d7d7d7;
+
+    --hover: #f3f3f3;
+
+    --accent: #1f1f1f;
+
+    --success: #188038;
+    --error: #b3261e;
+
+    --radius: 14px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Arial,
+            sans-serif;
+}
+
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.settings-shell {
+    width: min(620px, calc(100% - 32px));
+
+    margin: 56px auto;
+
+    padding-bottom: 40px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+.app-mark {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--surface);
+
+    font-size: 20px;
+
+    box-shadow:
+            0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+
+.page-header h1 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 23px;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+
+.page-header p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.settings-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+
+    box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+.setting-group {
+    padding: 22px;
+}
+
+
+.divider {
+    height: 1px;
+
+    margin: 0 22px;
+
+    background: var(--border);
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.setting-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+
+.setting-heading h2 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.setting-heading p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   FIELD LABELS
+   ========================================================= */
+
+.field-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #505050;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+select {
+    width: 100%;
+    height: 42px;
+
+    border: 1px solid var(--border-strong);
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease,
+            background 0.15s ease;
+}
+
+
+input {
+    padding: 0 12px;
+}
+
+
+input::placeholder {
+    color: #9a9a9a;
+}
+
+
+input:focus,
+select:focus {
+    border-color: #999999;
+
+    box-shadow:
+            0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   CUSTOM SELECT
+   ========================================================= */
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    padding:
+            0 42px 0 12px;
+
+    background-color: #ffffff;
+
+    background-image:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235f6368' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position:
+            right 14px center;
+
+    background-size:
+            14px 14px;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            box-shadow 0.15s ease;
+}
+
+
+select:hover {
+    background-color: #fafafa;
+
+    border-color: #bdbdbd;
+
+    background-image:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231f1f1f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+
+select:focus {
+    border-color: #999999;
+
+    box-shadow:
+            0 0 0 3px
+            rgba(0, 0, 0, 0.05);
+
+    background-image:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231f1f1f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   INPUT ROWS
+   ========================================================= */
+
+.input-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.input-row input,
+.input-row select {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+   ========================================================= */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+            background 0.15s ease,
+            opacity 0.15s ease,
+            transform 0.08s ease;
+}
+
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+button:disabled {
+    opacity: 0.5;
+
+    cursor: default;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.ghost-button {
+    height: 42px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border-strong);
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #444444;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.ghost-button:hover {
+    background: var(--hover);
+}
+
+
+/* =========================================================
+   SMALL PRIMARY BUTTON
+   ========================================================= */
+
+.primary-small-button {
+    height: 42px;
+
+    padding: 0 16px;
+
+    border-radius: 9px;
+
+    background: var(--accent);
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.primary-small-button:hover {
+    opacity: 0.88;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-text {
+    min-height: 18px;
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+.status-success {
+    color: var(--success) !important;
+}
+
+
+.status-error {
+    color: var(--error) !important;
+}
+
+
+/* =========================================================
+   INFO NOTE
+   ========================================================= */
+
+.info-note {
+    margin-top: 10px;
+
+    padding: 9px 11px;
+
+    border-radius: 8px;
+
+    background: #f6f6f6;
+
+    color: #666666;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.settings-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 14px;
+
+    margin-top: 16px;
+}
+
+
+.save-status {
+    margin-right: auto;
+
+    font-size: 13px;
+}
+
+
+.save-button {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    background: var(--accent);
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+
+.save-button:hover {
+    opacity: 0.88;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .settings-shell {
+        width: calc(100% - 24px);
+
+        margin: 28px auto;
+    }
+
+
+    .setting-group {
+        padding: 18px;
+    }
+
+
+    .divider {
+        margin: 0 18px;
+    }
+
+
+    .input-row {
+        flex-wrap: wrap;
+    }
+
+
+    .input-row input,
+    .input-row select {
+        flex-basis: 100%;
+    }
+
+
+    .ghost-button,
+    .primary-small-button {
+        flex: 1;
+    }
+
+
+    .settings-footer {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .save-status {
+        margin: 0;
+    }
+
+
+    .save-button {
+        width: 100%;
+    }
+}
