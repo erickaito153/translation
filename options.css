@@ -28,6 +28,12 @@
 }
 
 
+html,
+body {
+    min-height: 100%;
+}
+
+
 body {
     margin: 0;
 
@@ -42,6 +48,8 @@ body {
             "Segoe UI",
             Arial,
             sans-serif;
+
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -53,15 +61,18 @@ select {
 
 
 /* =========================================================
-   MAIN LAYOUT
+   PAGE LAYOUT
    ========================================================= */
 
 .settings-shell {
-    width: min(620px, calc(100% - 32px));
+    width:
+            min(620px, calc(100% - 32px));
 
-    margin: 56px auto;
+    margin:
+            56px auto;
 
-    padding-bottom: 40px;
+    padding-bottom:
+            40px;
 }
 
 
@@ -84,60 +95,78 @@ select {
     width: 42px;
     height: 42px;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
+    border:
+            1px solid var(--border);
 
-    border: 1px solid var(--border);
     border-radius: 12px;
 
-    background: var(--surface);
+    background:
+            var(--surface);
 
     font-size: 20px;
 
     box-shadow:
-            0 1px 3px rgba(0, 0, 0, 0.05);
+            0 1px 3px
+            rgba(0, 0, 0, 0.05);
 }
 
 
 .page-header h1 {
     margin: 0;
 
-    color: var(--text);
+    color:
+            var(--text);
 
     font-size: 23px;
+
     font-weight: 700;
 
-    letter-spacing: -0.02em;
+    line-height: 1.2;
+
+    letter-spacing:
+            -0.02em;
 }
 
 
 .page-header p {
-    margin: 4px 0 0;
+    margin:
+            4px 0 0;
 
-    color: var(--muted);
+    color:
+            var(--muted);
 
     font-size: 13px;
+
+    line-height: 1.4;
 }
 
 
 /* =========================================================
-   MAIN CARD
+   SETTINGS CARD
    ========================================================= */
 
 .settings-card {
     overflow: hidden;
 
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border:
+            1px solid var(--border);
 
-    background: var(--surface);
+    border-radius:
+            var(--radius);
+
+    background:
+            var(--surface);
 
     box-shadow:
-            0 2px 8px rgba(0, 0, 0, 0.04);
+            0 2px 8px
+            rgba(0, 0, 0, 0.04);
 }
 
 
@@ -149,14 +178,16 @@ select {
 .divider {
     height: 1px;
 
-    margin: 0 22px;
+    margin:
+            0 22px;
 
-    background: var(--border);
+    background:
+            var(--border);
 }
 
 
 /* =========================================================
-   SECTION TITLES
+   SECTION HEADINGS
    ========================================================= */
 
 .setting-heading {
@@ -172,23 +203,32 @@ select {
 .setting-heading h2 {
     margin: 0;
 
+    color:
+            var(--text);
+
     font-size: 15px;
+
     font-weight: 700;
+
+    line-height: 1.3;
 }
 
 
 .setting-heading p {
-    margin: 4px 0 0;
+    margin:
+            4px 0 0;
 
-    color: var(--muted);
+    color:
+            var(--muted);
 
     font-size: 12px;
-    line-height: 1.4;
+
+    line-height: 1.45;
 }
 
 
 /* =========================================================
-   FIELD LABELS
+   LABELS
    ========================================================= */
 
 .field-label {
@@ -199,50 +239,68 @@ select {
     color: #505050;
 
     font-size: 12px;
+
     font-weight: 600;
 }
 
 
 /* =========================================================
-   INPUTS
+   INPUTS / SELECTS
    ========================================================= */
 
 input,
 select {
     width: 100%;
+
     height: 42px;
 
-    border: 1px solid var(--border-strong);
+    border:
+            1px solid var(--border-strong);
+
     border-radius: 9px;
 
-    background: #ffffff;
-    color: var(--text);
+    background-color:
+            #ffffff;
+
+    color:
+            var(--text);
 
     outline: none;
 
     transition:
             border-color 0.15s ease,
             box-shadow 0.15s ease,
-            background 0.15s ease;
+            background-color 0.15s ease;
 }
 
 
 input {
-    padding: 0 12px;
+    padding:
+            0 12px;
 }
 
 
 input::placeholder {
-    color: #9a9a9a;
+    color:
+            #9a9a9a;
+}
+
+
+input:hover,
+select:hover {
+    border-color:
+            #bdbdbd;
 }
 
 
 input:focus,
 select:focus {
-    border-color: #999999;
+    border-color:
+            #999999;
 
     box-shadow:
-            0 0 0 3px rgba(0, 0, 0, 0.05);
+            0 0 0 3px
+            rgba(0, 0, 0, 0.05);
 }
 
 
@@ -257,47 +315,34 @@ select {
     cursor: pointer;
 
     padding:
-            0 42px 0 12px;
-
-    background-color: #ffffff;
+            0 44px 0 12px;
 
     background-image:
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235f6368' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236f6f6f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
 
-    background-repeat: no-repeat;
+    background-repeat:
+            no-repeat;
 
     background-position:
             right 14px center;
 
     background-size:
             14px 14px;
-
-    transition:
-            background-color 0.15s ease,
-            border-color 0.15s ease,
-            box-shadow 0.15s ease;
 }
 
 
 select:hover {
-    background-color: #fafafa;
-
-    border-color: #bdbdbd;
+    background-color:
+            #fafafa;
 
     background-image:
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231f1f1f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231f1f1f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
 }
 
 
 select:focus {
-    border-color: #999999;
-
-    box-shadow:
-            0 0 0 3px
-            rgba(0, 0, 0, 0.05);
-
     background-image:
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231f1f1f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231f1f1f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
 }
 
 
@@ -331,15 +376,19 @@ button {
 
     cursor: pointer;
 
+    user-select: none;
+
     transition:
-            background 0.15s ease,
+            background-color 0.15s ease,
+            border-color 0.15s ease,
             opacity 0.15s ease,
             transform 0.08s ease;
 }
 
 
 button:active {
-    transform: translateY(1px);
+    transform:
+            translateY(1px);
 }
 
 
@@ -359,21 +408,34 @@ button:disabled {
 .ghost-button {
     height: 42px;
 
-    padding: 0 14px;
+    padding:
+            0 14px;
 
-    border: 1px solid var(--border-strong);
+    border:
+            1px solid var(--border-strong);
+
     border-radius: 9px;
 
-    background: #ffffff;
-    color: #444444;
+    background:
+            #ffffff;
+
+    color:
+            #444444;
 
     font-size: 13px;
+
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 
 .ghost-button:hover {
-    background: var(--hover);
+    border-color:
+            #bdbdbd;
+
+    background:
+            var(--hover);
 }
 
 
@@ -384,15 +446,22 @@ button:disabled {
 .primary-small-button {
     height: 42px;
 
-    padding: 0 16px;
+    padding:
+            0 16px;
 
     border-radius: 9px;
 
-    background: var(--accent);
-    color: #ffffff;
+    background:
+            var(--accent);
+
+    color:
+            #ffffff;
 
     font-size: 13px;
+
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 
@@ -410,20 +479,24 @@ button:disabled {
 
     margin-top: 8px;
 
-    color: var(--muted);
+    color:
+            var(--muted);
 
     font-size: 12px;
-    line-height: 1.4;
+
+    line-height: 1.45;
 }
 
 
 .status-success {
-    color: var(--success) !important;
+    color:
+            var(--success) !important;
 }
 
 
 .status-error {
-    color: var(--error) !important;
+    color:
+            var(--error) !important;
 }
 
 
@@ -434,16 +507,20 @@ button:disabled {
 .info-note {
     margin-top: 10px;
 
-    padding: 9px 11px;
+    padding:
+            9px 11px;
 
     border-radius: 8px;
 
-    background: #f6f6f6;
+    background:
+            #f6f6f6;
 
-    color: #666666;
+    color:
+            #666666;
 
     font-size: 12px;
-    line-height: 1.4;
+
+    line-height: 1.45;
 }
 
 
@@ -473,23 +550,46 @@ button:disabled {
 .save-button {
     height: 42px;
 
-    padding: 0 18px;
+    padding:
+            0 18px;
 
     border-radius: 9px;
 
-    background: var(--accent);
-    color: #ffffff;
+    background:
+            var(--accent);
+
+    color:
+            #ffffff;
 
     font-size: 13px;
+
     font-weight: 700;
 
+    white-space: nowrap;
+
     box-shadow:
-            0 1px 2px rgba(0, 0, 0, 0.12);
+            0 1px 2px
+            rgba(0, 0, 0, 0.12);
 }
 
 
 .save-button:hover {
     opacity: 0.88;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline:
+            2px solid rgba(31, 31, 31, 0.35);
+
+    outline-offset:
+            2px;
 }
 
 
@@ -500,30 +600,36 @@ button:disabled {
 @media (max-width: 600px) {
 
     .settings-shell {
-        width: calc(100% - 24px);
+        width:
+                calc(100% - 24px);
 
-        margin: 28px auto;
+        margin:
+                28px auto;
     }
 
 
     .setting-group {
-        padding: 18px;
+        padding:
+                18px;
     }
 
 
     .divider {
-        margin: 0 18px;
+        margin:
+                0 18px;
     }
 
 
     .input-row {
-        flex-wrap: wrap;
+        flex-wrap:
+                wrap;
     }
 
 
     .input-row input,
     .input-row select {
-        flex-basis: 100%;
+        flex-basis:
+                100%;
     }
 
 
@@ -534,9 +640,11 @@ button:disabled {
 
 
     .settings-footer {
-        flex-direction: column;
+        flex-direction:
+                column;
 
-        align-items: stretch;
+        align-items:
+                stretch;
     }
 
 
