@@ -41,26 +41,6 @@ You can add screenshots here to show how the extension works.
 
 ![Settings](./images/settings.png)
 
-> Create an `images` folder in the project and place your screenshots there.
-
-Example structure:
-
-```text
-drag-translator/
-├── images/
-│   ├── translation-popup.png
-│   ├── dictionary-mode.png
-│   └── settings.png
-├── manifest.json
-├── background.js
-├── content.js
-├── content.css
-├── options.html
-├── options.js
-├── options.css
-└── README.md
-```
-
 ---
 
 ## How It Works
